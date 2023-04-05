@@ -1,10 +1,13 @@
 import 'package:delivery_customer_side/Forget%20Password/Forget_Password.dart';
 import 'package:delivery_customer_side/Home%20Screen/Home_Screen.dart';
 import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_Up.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../API/signUpApi.dart';
 import '../Bottom bar/Bottom_bar.dart';
+import '../Model/signInModel.dart';
 
 class Sign_In extends StatelessWidget {
   const Sign_In({Key? key}) : super(key: key);
@@ -63,11 +66,39 @@ class Sign_In extends StatelessWidget {
               width: 140,
               height: 33,
               child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return Bottom_bar();
-                    }));
+                  onPressed: () async{
+                    Map<String, dynamic> body = {
+                      "email": "use@gmail.com",
+                      "password": "mysecretpassword"
+                    };
+                    // Send the API request
+                    SignInResponse response = await ApiServiceForSignIn.signin(body);
+                    // Handle the API response
+                    if (response.riderId != null) {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return Bottom_bar();
+                          }));
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => CupertinoAlertDialog(
+                          title: new Text("Error"),
+                          content: new Text("Invalid Email or Password"),
+                          actions: <Widget>[
+                            CupertinoDialogAction(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text("Ok"),
+                            ),
+                          ],
+                        ),
+                      );
+                      // Error
+                      print("Error: ${response.riderId}");
+                    }
+
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color(0xff85DAE9),

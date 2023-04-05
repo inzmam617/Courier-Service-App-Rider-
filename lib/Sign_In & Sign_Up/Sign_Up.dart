@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -184,6 +185,10 @@ class Sign_Up extends StatelessWidget {
               height: 33,
               child: ElevatedButton(
                 onPressed: () async{
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return Personal_Information();
+                  }));
                   Map<String, dynamic> body = {
                     "firstName": "John",
                     "lastName": "Doe",
@@ -193,23 +198,34 @@ class Sign_Up extends StatelessWidget {
                     "city": "New York",
                     "dateOfBirth": "1990-01-01"
                   };
-
-
                   // Send the API request
                   SignupResponse response = await ApiServiceForSignup.signup(body);
-
                   // Handle the API response
                   if (response.id != null) {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (BuildContext context) {
+                      return Personal_Information();
+                    }));
                     // Success
                     print("User registered with id ${response.id}");
                   } else {
-                    // Error
-                    print("Error: ${response.message}");
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => CupertinoAlertDialog(
+                        title: new Text("Error"),
+                        content: new Text(response.message),
+                        actions: <Widget>[
+                          CupertinoDialogAction(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text("Ok"),
+                          ),
+                        ],
+                      ),
+                    );
+
                   }
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return Personal_Information();
-                  }));
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Color(0xff85DAE9),

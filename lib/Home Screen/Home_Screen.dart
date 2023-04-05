@@ -300,7 +300,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 15),
+                              SizedBox(width: 10),
                               Container(
                                   decoration: BoxDecoration(
                                       color: Colors.white,
