@@ -13,8 +13,8 @@ class Withdraw extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Color(0xff85DAE9),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff85DAE9),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
         ),
         leading: Padding(
@@ -29,7 +29,7 @@ class Withdraw extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "Withdraw",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
@@ -37,12 +37,12 @@ class Withdraw extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(100),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Color(0xff85DAE9),
                         blurRadius: 3.0,
@@ -56,14 +56,14 @@ class Withdraw extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return Bank();
+                      return const Bank();
                     }));
                   },
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(100),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Color(0xff85DAE9),
                               blurRadius: 3.0,
@@ -74,8 +74,8 @@ class Withdraw extends StatelessWidget {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/bank-finance-loan-icon.svg"),
-                          SizedBox(height: 5),
-                          Text(
+                          const SizedBox(height: 5),
+                          const Text(
                             "With Bank",
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           ),
@@ -86,12 +86,12 @@ class Withdraw extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(100),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Color(0xff85DAE9),
                         blurRadius: 3.0,
@@ -105,14 +105,14 @@ class Withdraw extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return Mobile_Account();
+                      return const Mobile_Account();
                     }));
                   },
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(100),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Color(0xff85DAE9),
                               blurRadius: 3.0,
@@ -123,8 +123,8 @@ class Withdraw extends StatelessWidget {
                       child: Column(
                         children: [
                           SvgPicture.asset("assets/mobile-phone-icon.svg"),
-                          SizedBox(height: 5),
-                          Text(
+                          const SizedBox(height: 5),
+                          const Text(
                             "With Mobile",
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           ),

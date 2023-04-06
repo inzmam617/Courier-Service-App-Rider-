@@ -1,8 +1,6 @@
-import 'dart:async';
 import 'dart:io';
 import 'package:delivery_customer_side/Starting_Pages/Page_View.dart';
 import 'package:flutter/material.dart';
-import 'Starting_Pages/First_Page.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();

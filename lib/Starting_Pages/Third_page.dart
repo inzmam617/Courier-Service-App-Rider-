@@ -10,23 +10,23 @@ class Third_page extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 70),
+          const SizedBox(height: 70),
           Center(
             child: SvgPicture.asset("assets/Group 11698.svg"),
           ),
-          SizedBox(height: 20),
-          Text(
+          const SizedBox(height: 20),
+          const Text(
             "Round the clock support",
             style: TextStyle(fontSize: 21, color: Color(0xffFD9F00)),
           ),
-          SizedBox(height: 10),
-          Text(
+          const SizedBox(height: 10),
+          const Text(
             "Text to Fill provides a flexible platform to sell your products or\nservices so that you can focus on your sales provides a flexible\nplatform to sell your products or services so that you can focus on",
             style: TextStyle(fontSize: 11, color: Color(0xff585D5E)),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SvgPicture.asset("assets/Group 11699.svg"),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SizedBox(
             width: 200,
             child: ElevatedButton(
@@ -37,10 +37,10 @@ class Third_page extends StatelessWidget {
                   }));
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xff85DAE9),
+                    backgroundColor: const Color(0xff85DAE9),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32))),
-                child: Text(
+                child: const Text(
                   "GET STARTED",
                   style: TextStyle(fontSize: 14, color: Colors.white),
                 )),

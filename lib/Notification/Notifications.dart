@@ -15,11 +15,11 @@ class Notifications extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.black,
             )),
-        title: Text(
+        title: const Text(
           "Notification",
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
@@ -28,7 +28,7 @@ class Notifications extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
@@ -38,7 +38,7 @@ class Notifications extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -49,10 +49,10 @@ class Notifications extends StatelessWidget {
                     child: TextFormField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.only(top: 5),
+                          contentPadding: const EdgeInsets.only(top: 5),
                           hintText: "What are you looking for ",
                           hintStyle:
-                              TextStyle(fontSize: 10, color: Color(0xffCAC2C2)),
+                              const TextStyle(fontSize: 10, color: Color(0xffCAC2C2)),
                           prefixIcon: SvgPicture.asset(
                             "assets/Iconly-Broken-Search.svg",
                             fit: BoxFit.scaleDown,
@@ -64,7 +64,7 @@ class Notifications extends StatelessWidget {
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            primary: Color(0xffFFFFFF),
+                            backgroundColor: const Color(0xffFFFFFF),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
                         child: SvgPicture.asset(
@@ -75,41 +75,41 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     "This Week",
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xffFF970B),
+                      color: const Color(0xffFF970B),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     height: 20,
                     width: 25,
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "5",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     )),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     height: 0.5,
                     width: MediaQuery.of(context).size.width / 1.75,
-                    color: Color(0xff707070),
+                    color: const Color(0xff707070),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
@@ -118,9 +118,9 @@ class Notifications extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color(0xffE2E2E2),
+                            color: const Color(0xffE2E2E2),
                             borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 3,
@@ -139,7 +139,7 @@ class Notifications extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 1,
@@ -156,18 +156,18 @@ class Notifications extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Lorem ipsum dolor sit amet, consectetur",
                         style: TextStyle(
                           fontSize: 13,
                           color: Color(0xffE2E2E2),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -193,7 +193,7 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
@@ -202,7 +202,7 @@ class Notifications extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -215,15 +215,15 @@ class Notifications extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                     ),
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Lorem ipsum dolor sit amet, consectetur",
                         style: TextStyle(fontSize: 13, color: Colors.black),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -245,41 +245,41 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     "This Month",
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xffFF970B),
+                      color: const Color(0xffFF970B),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     height: 20,
                     width: 25,
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "5",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     )),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     height: 0.5,
                     width: MediaQuery.of(context).size.width / 1.75,
-                    color: Color(0xff707070),
+                    color: const Color(0xff707070),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
@@ -288,9 +288,9 @@ class Notifications extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color(0xffE2E2E2),
+                            color: const Color(0xffE2E2E2),
                             borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 3,
@@ -309,7 +309,7 @@ class Notifications extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 1,
@@ -326,18 +326,18 @@ class Notifications extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Lorem ipsum dolor sit amet, consectetur",
                         style: TextStyle(
                           fontSize: 13,
                           color: Color(0xffE2E2E2),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -363,7 +363,7 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Row(
@@ -372,9 +372,9 @@ class Notifications extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color(0xffE2E2E2),
+                            color: const Color(0xffE2E2E2),
                             borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 3,
@@ -393,7 +393,7 @@ class Notifications extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 1,
@@ -410,18 +410,18 @@ class Notifications extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Lorem ipsum dolor sit amet, consectetur",
                         style: TextStyle(
                           fontSize: 13,
                           color: Color(0xffE2E2E2),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -447,32 +447,32 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 150,
               height: 35,
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xffD92934),
+                      backgroundColor: const Color(0xffD92934),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32))),
-                  child: Text(
+                  child: const Text(
                     "Delete",
                     style: TextStyle(fontSize: 9, color: Colors.white),
                   )),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             SizedBox(
               width: 110,
               height: 25,
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff85DAE9),
+                      backgroundColor: const Color(0xff85DAE9),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32))),
-                  child: Text(
+                  child: const Text(
                     "Delete",
                     style: TextStyle(fontSize: 9, color: Colors.white),
                   )),

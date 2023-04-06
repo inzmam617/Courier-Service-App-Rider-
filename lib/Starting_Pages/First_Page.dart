@@ -1,5 +1,4 @@
 import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_In.dart';
-import 'package:delivery_customer_side/Starting_Pages/Second_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,25 +10,25 @@ class First_Page extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 70),
+          const SizedBox(height: 70),
           Center(
             child: SvgPicture.asset(
               "assets/First Page.svg",
             ),
           ),
-          SizedBox(height: 20),
-          Text(
+          const SizedBox(height: 20),
+          const Text(
             "Flexible Work",
             style: TextStyle(fontSize: 21, color: Color(0xffFD9F00)),
           ),
-          SizedBox(height: 10),
-          Text(
+          const SizedBox(height: 10),
+          const Text(
             "Text to Fill provides a flexible platform to sell your products or\nservices so that you can focus on your sales provides a flexible\nplatform to sell your products or services so that you can focus on",
             style: TextStyle(fontSize: 11, color: Color(0xff585D5E)),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SvgPicture.asset("assets/Group 11692.svg"),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SizedBox(
             width: 200,
             child: ElevatedButton(
@@ -40,10 +39,10 @@ class First_Page extends StatelessWidget {
                   }));
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xff85DAE9),
+                    backgroundColor: const Color(0xff85DAE9),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32))),
-                child: Text(
+                child: const Text(
                   "GET STARTED",
                   style: TextStyle(fontSize: 14, color: Colors.white),
                 )),

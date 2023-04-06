@@ -10,8 +10,8 @@ class Bank extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Color(0xff85DAE9),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff85DAE9),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
         ),
         leading: Padding(
@@ -26,7 +26,7 @@ class Bank extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "Bank",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
@@ -35,12 +35,12 @@ class Bank extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                           color: Colors.grey,
                           blurRadius: 3,
@@ -57,12 +57,12 @@ class Bank extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 1.5,
                       ),
                     ),
-                    SizedBox(width: 2),
+                    const SizedBox(width: 2),
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -74,17 +74,17 @@ class Bank extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Add Amount",
                             style:
                                 TextStyle(fontSize: 12, color: Color(0xffCAC2C2)),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(32),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 3,
@@ -100,9 +100,9 @@ class Bank extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Container(
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                decoration: const BoxDecoration(color: Colors.white, boxShadow: [
                   BoxShadow(
                       color: Color(0xffA1E2EE),
                       blurRadius: 3,
@@ -112,24 +112,24 @@ class Bank extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        SizedBox(width: 25),
+                        const SizedBox(width: 25),
                         SvgPicture.asset("assets/bank-finance-loan-icon.svg"),
-                        SizedBox(width: 10),
-                        Text(
+                        const SizedBox(width: 10),
+                        const Text(
                           "With Bank",
                           style:
                               TextStyle(fontSize: 15, color: Color(0xff585D5E)),
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
-                    Align(
+                    const SizedBox(height: 30),
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(left: 25),
                           child: Text(
                             "Card Holder",
                             style:
@@ -145,17 +145,17 @@ class Bank extends StatelessWidget {
                                 fit: BoxFit.scaleDown,
                               ),
                               hintText: "Oguz Bulbul",
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                   fontSize: 12, color: Color(0xff171717)),
-                              enabledBorder: UnderlineInputBorder(
+                              enabledBorder: const UnderlineInputBorder(
                                   borderSide:
                                       BorderSide(color: Color(0xff8F92A1))))),
                     ),
-                    SizedBox(height: 20),
-                    Align(
+                    const SizedBox(height: 20),
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(left: 25),
                           child: Text(
                             "Card Number",
                             style:
@@ -171,22 +171,22 @@ class Bank extends StatelessWidget {
                                 fit: BoxFit.scaleDown,
                               ),
                               hintText: "888532112155",
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                   fontSize: 12, color: Color(0xff171717)),
-                              enabledBorder: UnderlineInputBorder(
+                              enabledBorder: const UnderlineInputBorder(
                                   borderSide:
                                       BorderSide(color: Color(0xff8F92A1))))),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 25),
+                                  padding: EdgeInsets.only(left: 25),
                                   child: Text(
                                     "Expiry Date",
                                     style: TextStyle(
@@ -194,7 +194,7 @@ class Bank extends StatelessWidget {
                                   ),
                                 )),
                             Padding(
-                              padding: const EdgeInsets.only(right: 130),
+                              padding: EdgeInsets.only(right: 130),
                               child: Text(
                                 "CCV",
                                 style: TextStyle(
@@ -219,16 +219,16 @@ class Bank extends StatelessWidget {
                                             fit: BoxFit.scaleDown,
                                           ),
                                           hintText: "01/03/2023",
-                                          hintStyle: TextStyle(
+                                          hintStyle: const TextStyle(
                                               fontSize: 12,
                                               color: Color(0xff171717)),
-                                          enabledBorder: UnderlineInputBorder(
+                                          enabledBorder: const UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                   color: Color(0xff8F92A1))))),
                                 ),
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                             Padding(
                               padding: const EdgeInsets.all(5),
                               child: SizedBox(
@@ -241,10 +241,10 @@ class Bank extends StatelessWidget {
                                           fit: BoxFit.scaleDown,
                                         ),
                                         hintText: "0 0 0",
-                                        hintStyle: TextStyle(
+                                        hintStyle: const TextStyle(
                                             fontSize: 12,
                                             color: Color(0xff171717)),
-                                        enabledBorder: UnderlineInputBorder(
+                                        enabledBorder: const UnderlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Color(0xff8F92A1))))),
                               ),
@@ -256,17 +256,17 @@ class Bank extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               SizedBox(
                 height: 35,
                 width: 150,
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        primary: Color(0xff85DAE9),
+                        backgroundColor: const Color(0xff85DAE9),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32))),
-                    child: Text(
+                    child: const Text(
                       "Done",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     )),

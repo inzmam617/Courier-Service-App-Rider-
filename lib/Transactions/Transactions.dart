@@ -20,7 +20,7 @@ class Transactions extends StatelessWidget {
             fit: BoxFit.scaleDown,
           ),
         ),
-        title: Text(
+        title: const Text(
           "Transactions",
           style: TextStyle(fontSize: 20, color: Colors.black),
         ),
@@ -30,12 +30,12 @@ class Transactions extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         blurRadius: 3,
@@ -53,11 +53,11 @@ class Transactions extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     fit: BoxFit.cover,
                                     image: AssetImage("assets/pic.png.jpg")),
                                 borderRadius: BorderRadius.circular(100),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 1,
@@ -67,11 +67,11 @@ class Transactions extends StatelessWidget {
                             height: 35,
                             width: 35,
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "Inzmam Malik",
                                 style: TextStyle(
@@ -87,7 +87,7 @@ class Transactions extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
+                      const Text(
                         "256\$",
                         style:
                             TextStyle(fontSize: 22, color: Color(0xffFD9F00)),
@@ -96,12 +96,12 @@ class Transactions extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         blurRadius: 3,
@@ -119,11 +119,11 @@ class Transactions extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     fit: BoxFit.cover,
                                     image: AssetImage("assets/pic.png.jpg")),
                                 borderRadius: BorderRadius.circular(100),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 1,
@@ -133,11 +133,11 @@ class Transactions extends StatelessWidget {
                             height: 35,
                             width: 35,
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "Inzmam Malik",
                                 style: TextStyle(
@@ -153,7 +153,7 @@ class Transactions extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
+                      const Text(
                         "256\$",
                         style:
                             TextStyle(fontSize: 22, color: Color(0xffFD9F00)),
@@ -162,12 +162,12 @@ class Transactions extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         blurRadius: 3,
@@ -185,11 +185,11 @@ class Transactions extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     fit: BoxFit.cover,
                                     image: AssetImage("assets/pic.png.jpg")),
                                 borderRadius: BorderRadius.circular(100),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 1,
@@ -199,11 +199,11 @@ class Transactions extends StatelessWidget {
                             height: 35,
                             width: 35,
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "Inzmam Malik",
                                 style: TextStyle(
@@ -219,7 +219,7 @@ class Transactions extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
+                      const Text(
                         "256\$",
                         style:
                             TextStyle(fontSize: 22, color: Color(0xffFD9F00)),

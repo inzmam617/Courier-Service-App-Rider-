@@ -11,11 +11,11 @@ class Bank_Information extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 80),
+          const SizedBox(height: 80),
           Align(
             alignment: Alignment.topLeft,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xff85DAE9),
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(32),
@@ -24,7 +24,7 @@ class Bank_Information extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 3,
               child: Row(
                 children: [
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   InkWell(
                     onTap: () {
                       Navigator.of(context).pop();
@@ -32,8 +32,8 @@ class Bank_Information extends StatelessWidget {
                     child: SvgPicture.asset(
                         "assets/Iconly-Light-outline-Arrow - Left.svg"),
                   ),
-                  SizedBox(width: 10),
-                  Text(
+                  const SizedBox(width: 10),
+                  const Text(
                     "Sign Up",
                     style: TextStyle(
                         fontSize: 18,
@@ -44,7 +44,7 @@ class Bank_Information extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 23),
             child: Row(
@@ -52,15 +52,15 @@ class Bank_Information extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff85DAE9)),
-                      borderRadius: BorderRadius.all(Radius.circular(100))),
+                      border: Border.all(color: const Color(0xff85DAE9)),
+                      borderRadius: const BorderRadius.all(Radius.circular(100))),
                   height: 30,
                   width: 30,
                   child: Padding(
                     padding: const EdgeInsets.all(5),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xff85DAE9),
+                        color: const Color(0xff85DAE9),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       height: 20,
@@ -75,15 +75,15 @@ class Bank_Information extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff85DAE9)),
-                      borderRadius: BorderRadius.all(Radius.circular(100))),
+                      border: Border.all(color: const Color(0xff85DAE9)),
+                      borderRadius: const BorderRadius.all(Radius.circular(100))),
                   height: 30,
                   width: 30,
                   child: Padding(
                     padding: const EdgeInsets.all(5),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xff85DAE9),
+                        color: const Color(0xff85DAE9),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       height: 20,
@@ -98,15 +98,15 @@ class Bank_Information extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff85DAE9)),
-                      borderRadius: BorderRadius.all(Radius.circular(100))),
+                      border: Border.all(color: const Color(0xff85DAE9)),
+                      borderRadius: const BorderRadius.all(Radius.circular(100))),
                   height: 30,
                   width: 30,
                   child: Padding(
                     padding: const EdgeInsets.all(5),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xff85DAE9),
+                        color: const Color(0xff85DAE9),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       height: 20,
@@ -117,12 +117,12 @@ class Bank_Information extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "Personal Information",
                   style: TextStyle(fontSize: 10, color: Color(0xff585D5E)),
@@ -138,12 +138,12 @@ class Bank_Information extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 70),
+          const SizedBox(height: 70),
           Container(
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(100),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       color: Color(0xff85DAE9),
                       blurRadius: 3.0,
@@ -157,14 +157,14 @@ class Bank_Information extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return With_Bank();
+                    return const With_Bank();
                   }));
                 },
                 child: Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(100),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Color(0xff85DAE9),
                             blurRadius: 3.0,
@@ -175,8 +175,8 @@ class Bank_Information extends StatelessWidget {
                     child: Column(
                       children: [
                         SvgPicture.asset("assets/bank-finance-loan-icon.svg"),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "With Bank",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         ),
@@ -187,12 +187,12 @@ class Bank_Information extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(100),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       color: Color(0xff85DAE9),
                       blurRadius: 3.0,
@@ -206,14 +206,14 @@ class Bank_Information extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return With_Mobile();
+                    return const With_Mobile();
                   }));
                 },
                 child: Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(100),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Color(0xff85DAE9),
                             blurRadius: 3.0,
@@ -224,8 +224,8 @@ class Bank_Information extends StatelessWidget {
                     child: Column(
                       children: [
                         SvgPicture.asset("assets/mobile-phone-icon.svg"),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "With Mobile",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         ),

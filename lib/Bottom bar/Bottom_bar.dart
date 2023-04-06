@@ -6,35 +6,42 @@ import '../Account/Account.dart';
 import '../Inbox/Inbox.dart';
 
 class Bottom_bar extends StatefulWidget {
-  const Bottom_bar({Key? key}) : super(key: key);
+   Bottom_bar({Key? key ,required  this.id}) : super(key: key);
 
+  String id;
   @override
-  State<Bottom_bar> createState() => _Bottom_barState();
+  State<Bottom_bar> createState() => _Bottom_barState(id: id);
 }
 
 class _Bottom_barState extends State<Bottom_bar> {
-  static List<Widget> _widgetOptions = <Widget>[
-    Home_Screen(),
-    NotificationPage(),
-    Account(),
-    Inbox(),
-    Text(
-      'Index 1: Home',
-      // style: optionStyle,
-    ),
-    Text(
-      'Index 2: Notification',
-      // style: optionStyle,
-    ),
-    Text(
-      'Index 3: Profile',
-      // style: optionStyle,
-    ),
-    Text(
-      'Index 4: CHat',
-      // style: optionStyle,
-    ),
-  ];
+  String id;
+
+  late List<Widget> _widgetOptions;
+
+  _Bottom_barState({required this.id}) {
+    _widgetOptions = <Widget>[
+      const Home_Screen(),
+      const NotificationPage(),
+      Account(id: id,),
+      const Inbox(),
+      const Text(
+        'Index 1: Home',
+        // style: optionStyle,
+      ),
+      const Text(
+        'Index 2: Notification',
+        // style: optionStyle,
+      ),
+      const Text(
+        'Index 3: Profile',
+        // style: optionStyle,
+      ),
+      const Text(
+        'Index 4: CHat',
+        // style: optionStyle,
+      ),
+    ];
+  }
 
   int _selectedIndex = 0;
 

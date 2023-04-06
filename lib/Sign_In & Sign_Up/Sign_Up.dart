@@ -2,12 +2,36 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../API/signUpApi.dart';
-import '../Model/signUpModel.dart';
+
+import '../API/All_APi.dart';
 import '../Sign Up/Personal_Information.dart';
 
-class Sign_Up extends StatelessWidget {
-  const Sign_Up({Key? key}) : super(key: key);
+class Sign_Up extends StatefulWidget {
+   const Sign_Up({Key? key}) : super(key: key);
+
+  @override
+  State<Sign_Up> createState() => _Sign_UpState();
+}
+
+class _Sign_UpState extends State<Sign_Up> {
+  TextEditingController fName =TextEditingController();
+
+  TextEditingController lName =TextEditingController();
+
+  TextEditingController Email =TextEditingController();
+
+  TextEditingController pass =TextEditingController();
+
+  TextEditingController Phone =TextEditingController();
+
+  TextEditingController M =TextEditingController();
+
+  TextEditingController D =TextEditingController();
+
+  TextEditingController Y =TextEditingController();
+
+// TextEditingController fName =TextEditingController();
+  String city = "";
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +39,18 @@ class Sign_Up extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
             Center(child: SvgPicture.asset("assets/6300958.svg")),
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               "Sign Up",
               style: TextStyle(fontSize: 22, color: Colors.black),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextField(
-                decoration: InputDecoration(
+                controller: fName,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "First name",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -34,7 +59,8 @@ class Sign_Up extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: lName,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Last name",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -43,7 +69,8 @@ class Sign_Up extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: Email,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Email",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -52,7 +79,8 @@ class Sign_Up extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: pass,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Password",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -61,7 +89,8 @@ class Sign_Up extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: Phone,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Phone number",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -77,58 +106,62 @@ class Sign_Up extends StatelessWidget {
                     child: DropdownButtonFormField(
                       icon: SvgPicture.asset("assets/Fill 4.svg"),
                       value: "Lahore",
-                      items: [
+                      items: const [
                         DropdownMenuItem(
+                          value: "Lahore",
                           child: Text(
                             "Lahore",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "Lahore",
                         ),
                         DropdownMenuItem(
+                          value: "Islamabad",
                           child: Text(
                             "Islamabad",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "Islamabad",
                         ),
                         DropdownMenuItem(
+                          value: "Jhelum",
                           child: Text(
                             "Jhelum",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "Jhelum",
                         ),
                         DropdownMenuItem(
+                          value: "Faislabad",
                           child: Text(
                             "Faislabad",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "Faislabad",
                         ),
                         DropdownMenuItem(
+                          value: "karachi",
                           child: Text(
                             "karachi",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "karachi",
                         ),
                         DropdownMenuItem(
+                          value: "Sindh",
                           child: Text(
                             "Sindh",
                             style: TextStyle(fontSize: 14, color: Colors.black),
                           ),
-                          value: "Sindh",
                         )
                       ],
                       onChanged: (value) {
+
                         print("changed");
+                        setState(() {
+                         city =  value! ;
+                        });
                       },
                     ),
                   ),
-                  SizedBox(width: 15),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                  const SizedBox(width: 15),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: Text(
                       "Date of Birth",
                       style: TextStyle(fontSize: 15, color: Color(0xffE2E1E1)),
@@ -140,7 +173,8 @@ class Sign_Up extends StatelessWidget {
                       height: 35,
                       width: 25,
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        controller: M,
+                        decoration: const InputDecoration(
                           hintText: "MM",
                           hintStyle:
                               TextStyle(fontSize: 14, color: Color(0xffC0BDBD)),
@@ -154,7 +188,8 @@ class Sign_Up extends StatelessWidget {
                       height: 35,
                       width: 25,
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        controller: D,
+                        decoration: const InputDecoration(
                           hintText: "DD",
                           hintStyle:
                               TextStyle(fontSize: 14, color: Color(0xffC0BDBD)),
@@ -168,7 +203,8 @@ class Sign_Up extends StatelessWidget {
                       height: 35,
                       width: 30,
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        controller: Y,
+                        decoration: const InputDecoration(
                           hintText: "YYY",
                           hintStyle:
                               TextStyle(fontSize: 14, color: Color(0xffC0BDBD)),
@@ -179,84 +215,89 @@ class Sign_Up extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 140,
               height: 33,
               child: ElevatedButton(
                 onPressed: () async{
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return Personal_Information();
-                  }));
+
+                  // Navigator.of(context)
+                  //     .push(MaterialPageRoute(builder: (BuildContext context) {
+                  //   return Personal_Information();
+                  // }));
                   Map<String, dynamic> body = {
-                    "firstName": "John",
-                    "lastName": "Doe",
-                    "email": "use@gmail.com",
-                    "password": "mysecretpassword",
+                    "firstName": fName.text,
+                    "lastName": lName.text,
+                    "email": Email.text,
+                    "password": pass.text,
                     "phoneNumber": "1234567890",
-                    "city": "New York",
+                    "city": city,
                     "dateOfBirth": "1990-01-01"
                   };
-                  // Send the API request
-                  SignupResponse response = await ApiServiceForSignup.signup(body);
-                  // Handle the API response
-                  if (response.id != null) {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (BuildContext context) {
-                      return Personal_Information();
-                    }));
-                    // Success
-                    print("User registered with id ${response.id}");
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) => CupertinoAlertDialog(
-                        title: new Text("Error"),
-                        content: new Text(response.message),
-                        actions: <Widget>[
-                          CupertinoDialogAction(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text("Ok"),
-                          ),
-                        ],
-                      ),
-                    );
+                  print(body);
 
-                  }
+
+                  // Send the API request
+                  ApiServiceForSignup.signup(body).then((value) {
+                    if (value.id != null) {
+                      print(value.id);
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (BuildContext context) {
+                        return Personal_Information(id: value.id ?? '',);
+
+                      }));
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => CupertinoAlertDialog(
+                          title: const Text("Error"),
+                          content: Text(value.message),
+                          actions: <Widget>[
+                            CupertinoDialogAction(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Ok"),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  });
+                  // Handle the API response
+
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xff85DAE9),
+                    backgroundColor: const Color(0xff85DAE9),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32))),
-                child: Text(
+                child: const Text(
                   "Next",
                   style: TextStyle(fontSize: 11, color: Colors.white),
                 ),
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Don't have an Account?",
                   style: TextStyle(fontSize: 14, color: Colors.black),
                 ),
-                SizedBox(width: 3),
+                const SizedBox(width: 3),
                 InkWell(
                     onTap: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign In",
                       style: TextStyle(fontSize: 14, color: Color(0xff585D5E)),
                     ))
               ],
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
           ],
         ),
       ),

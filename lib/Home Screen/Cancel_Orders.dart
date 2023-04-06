@@ -10,8 +10,8 @@ class Cancel_Orders extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Color(0xff85DAE9),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff85DAE9),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
         ),
         leading: Padding(
@@ -26,13 +26,13 @@ class Cancel_Orders extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "Cancel Orders",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: 20),
             child: CircleAvatar(
               backgroundImage: AssetImage("assets/pic.png.jpg"),
               radius: 15,
@@ -43,7 +43,7 @@ class Cancel_Orders extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
@@ -51,9 +51,9 @@ class Cancel_Orders extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -65,8 +65,8 @@ class Cancel_Orders extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset("assets/Delivery.svg"),
-                        SizedBox(width: 5),
-                        Text(
+                        const SizedBox(width: 5),
+                        const Text(
                           "Complete Orders",
                           style: TextStyle(fontSize: 7, color: Colors.white),
                         ),
@@ -76,13 +76,13 @@ class Cancel_Orders extends StatelessWidget {
                   Container(
                     height: 0.5,
                     width: MediaQuery.of(context).size.width / 10,
-                    color: Color(0xffE2E2E2),
+                    color: const Color(0xffE2E2E2),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -94,8 +94,8 @@ class Cancel_Orders extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset("assets/Pending Order.svg"),
-                        SizedBox(width: 5),
-                        Text(
+                        const SizedBox(width: 5),
+                        const Text(
                           "Pending",
                           style: TextStyle(fontSize: 7, color: Colors.white),
                         ),
@@ -105,13 +105,13 @@ class Cancel_Orders extends StatelessWidget {
                   Container(
                     height: 0.5,
                     width: MediaQuery.of(context).size.width / 10,
-                    color: Color(0xffE2E2E2),
+                    color: const Color(0xffE2E2E2),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffFD9F00),
+                        color: const Color(0xffFD9F00),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -123,8 +123,8 @@ class Cancel_Orders extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset("assets/Cancel Orders.svg"),
-                        SizedBox(width: 5),
-                        Text(
+                        const SizedBox(width: 5),
+                        const Text(
                           "Cancel Orders",
                           style: TextStyle(fontSize: 7, color: Colors.white),
                         ),
@@ -134,12 +134,12 @@ class Cancel_Orders extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Container(
               decoration: BoxDecoration(
-                  color: Color(0xffE2E2E2),
+                  color: const Color(0xffE2E2E2),
                   borderRadius: BorderRadius.circular(32),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 3,
@@ -152,9 +152,9 @@ class Cancel_Orders extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             blurRadius: 3,
@@ -173,9 +173,9 @@ class Cancel_Orders extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Pending",
                               style: TextStyle(
@@ -189,25 +189,25 @@ class Cancel_Orders extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 0.5,
                           width: MediaQuery.of(context).size.width / 2.3,
-                          color: Color(0xffACACAC),
+                          color: const Color(0xffACACAC),
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           "0-25JHKU-365",
                           style: TextStyle(fontSize: 10, color: Colors.black),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "Ali ahmad shah colony near Kashmir chowk",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
                         ),
-                        SizedBox(height: 2),
-                        Text(
+                        const SizedBox(height: 2),
+                        const Text(
                           "Sep 25, 2023 ",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
@@ -218,12 +218,12 @@ class Cancel_Orders extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Container(
               decoration: BoxDecoration(
-                  color: Color(0xffE2E2E2),
+                  color: const Color(0xffE2E2E2),
                   borderRadius: BorderRadius.circular(32),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 3,
@@ -236,9 +236,9 @@ class Cancel_Orders extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             blurRadius: 3,
@@ -257,9 +257,9 @@ class Cancel_Orders extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Pending",
                               style: TextStyle(
@@ -273,25 +273,25 @@ class Cancel_Orders extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 0.5,
                           width: MediaQuery.of(context).size.width / 2.3,
-                          color: Color(0xffACACAC),
+                          color: const Color(0xffACACAC),
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           "0-25JHKU-365",
                           style: TextStyle(fontSize: 10, color: Colors.black),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "Ali ahmad shah colony near Kashmir chowk",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
                         ),
-                        SizedBox(height: 2),
-                        Text(
+                        const SizedBox(height: 2),
+                        const Text(
                           "Sep 25, 2023 ",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
@@ -302,12 +302,12 @@ class Cancel_Orders extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Container(
               decoration: BoxDecoration(
-                  color: Color(0xffE2E2E2),
+                  color: const Color(0xffE2E2E2),
                   borderRadius: BorderRadius.circular(32),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 3,
@@ -320,9 +320,9 @@ class Cancel_Orders extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             blurRadius: 3,
@@ -341,9 +341,9 @@ class Cancel_Orders extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Pending",
                               style: TextStyle(
@@ -357,25 +357,25 @@ class Cancel_Orders extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 0.5,
                           width: MediaQuery.of(context).size.width / 2.3,
-                          color: Color(0xffACACAC),
+                          color: const Color(0xffACACAC),
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           "0-25JHKU-365",
                           style: TextStyle(fontSize: 10, color: Colors.black),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "Ali ahmad shah colony near Kashmir chowk",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
                         ),
-                        SizedBox(height: 2),
-                        Text(
+                        const SizedBox(height: 2),
+                        const Text(
                           "Sep 25, 2023 ",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
@@ -386,12 +386,12 @@ class Cancel_Orders extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Container(
               decoration: BoxDecoration(
-                  color: Color(0xffE2E2E2),
+                  color: const Color(0xffE2E2E2),
                   borderRadius: BorderRadius.circular(32),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 3,
@@ -404,9 +404,9 @@ class Cancel_Orders extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffE2E2E2),
+                        color: const Color(0xffE2E2E2),
                         borderRadius: BorderRadius.circular(32),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             blurRadius: 3,
@@ -425,9 +425,9 @@ class Cancel_Orders extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Pending",
                               style: TextStyle(
@@ -441,25 +441,25 @@ class Cancel_Orders extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 0.5,
                           width: MediaQuery.of(context).size.width / 2.3,
-                          color: Color(0xffACACAC),
+                          color: const Color(0xffACACAC),
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           "0-25JHKU-365",
                           style: TextStyle(fontSize: 10, color: Colors.black),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "Ali ahmad shah colony near Kashmir chowk",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),
                         ),
-                        SizedBox(height: 2),
-                        Text(
+                        const SizedBox(height: 2),
+                        const Text(
                           "Sep 25, 2023 ",
                           style:
                               TextStyle(fontSize: 10, color: Color(0xffACACAC)),

@@ -1,11 +1,10 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 class SignInResponse {
   final String? riderId;
   final String? token;
+  final String? message;
 
-  SignInResponse({ this.riderId, this.token});
+  SignInResponse({ this.riderId, this.token,this.message});
 
   factory SignInResponse.fromJson(Map<String, dynamic> json) {
     if (json.containsKey('riderId')) {
@@ -15,8 +14,7 @@ class SignInResponse {
       );
     } else {
       return SignInResponse(
-        riderId: null,
-        token: null,
+        message: json['message'],
       );
     }
   }

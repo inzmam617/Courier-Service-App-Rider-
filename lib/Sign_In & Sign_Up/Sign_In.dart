@@ -1,16 +1,17 @@
 import 'package:delivery_customer_side/Forget%20Password/Forget_Password.dart';
-import 'package:delivery_customer_side/Home%20Screen/Home_Screen.dart';
 import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_Up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../API/signUpApi.dart';
+import '../API/All_APi.dart';
 import '../Bottom bar/Bottom_bar.dart';
-import '../Model/signInModel.dart';
 
 class Sign_In extends StatelessWidget {
-  const Sign_In({Key? key}) : super(key: key);
+  Sign_In({Key? key}) : super(key: key);
+
+  TextEditingController email = TextEditingController();
+  TextEditingController pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +19,18 @@ class Sign_In extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
             Center(child: SvgPicture.asset("assets/6300828.svg")),
-            SizedBox(height: 40),
-            Text(
+            const SizedBox(height: 40),
+            const Text(
               "Sign In",
               style: TextStyle(fontSize: 22, color: Colors.black),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: email,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Email ID",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
@@ -37,13 +39,14 @@ class Sign_In extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 50),
               child: TextFormField(
-                decoration: InputDecoration(
+                controller: pass,
+                decoration: const InputDecoration(
                     contentPadding: EdgeInsets.only(top: 20),
                     hintText: "Password",
                     hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(right: 50),
               child: Align(
@@ -52,96 +55,118 @@ class Sign_In extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (BuildContext context) {
-                        return Forget_Password();
+                        return const Forget_Password();
                       }));
                     },
-                    child: Text(
+                    child: const Text(
                       "Forgot Password",
                       style: TextStyle(fontSize: 10, color: Colors.black),
                     ),
                   )),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 140,
               height: 33,
               child: ElevatedButton(
                   onPressed: () async{
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (BuildContext context) {
+                    //       return const Bottom_bar();
+                    //     }));
                     Map<String, dynamic> body = {
-                      "email": "use@gmail.com",
-                      "password": "mysecretpassword"
+                      "email": email.text,
+                      "password": pass.text
+
                     };
+
                     // Send the API request
-                    SignInResponse response = await ApiServiceForSignIn.signin(body);
-                    // Handle the API response
-                    if (response.riderId != null) {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                            return Bottom_bar();
-                          }));
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) => CupertinoAlertDialog(
-                          title: new Text("Error"),
-                          content: new Text("Invalid Email or Password"),
-                          actions: <Widget>[
-                            CupertinoDialogAction(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text("Ok"),
-                            ),
-                          ],
-                        ),
-                      );
-                      // Error
-                      print("Error: ${response.riderId}");
-                    }
+                    ApiServiceForSignIn.signin(body).then((value) {
+                      if (value.riderId != null) {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                              return Bottom_bar(id: value.riderId.toString(),);
+                            }));
+                      } else {
+                        // showDialog(
+                        //   context: context,
+                        //   builder: (BuildContext context) => CupertinoAlertDialog(
+                        //     title: const Text("Error"),
+                        //     content: Text(value.message.toString()),
+                        //     actions: <Widget>[
+                        //       CupertinoDialogAction(
+                        //         onPressed: () {
+                        //           Navigator.pop(context);
+                        //         },
+                        //         child: Text("Ok"),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // );
+                        // Error
+                        print("Error: ${value.riderId}");
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => CupertinoAlertDialog(
+                            title: const Text("Error"),
+                            content: Text(value.message.toString()),
+                            actions: <Widget>[
+                              CupertinoDialogAction(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text("Ok"),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                    });
+
 
                   },
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff85DAE9),
+                      backgroundColor: const Color(0xff85DAE9),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32))),
-                  child: Text(
+                  child: const Text(
                     "Sign In",
                     style: TextStyle(fontSize: 11, color: Colors.white),
                   )),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Don't have an Account?",
                   style: TextStyle(fontSize: 14, color: Colors.black),
                 ),
-                SizedBox(width: 3),
+                const SizedBox(width: 3),
                 InkWell(
                     onTap: () {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (BuildContext context) {
-                        return Sign_Up();
+                        return const Sign_Up();
                       }));
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(fontSize: 14, color: Color(0xff585D5E)),
                     ))
               ],
             ),
-            SizedBox(height: 70),
-            Text(
+            const SizedBox(height: 70),
+            const Text(
               "Sign In with",
               style: TextStyle(fontSize: 14, color: Colors.black),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset("assets/apple (1).svg"),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 SvgPicture.asset("assets/16983312581574338606.svg")
               ],
             )

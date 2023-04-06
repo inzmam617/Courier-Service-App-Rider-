@@ -10,10 +10,12 @@ class Page_View extends StatelessWidget {
   final PageController  pageController = PageController();
 
   List<Widget> pages = [
-    First_Page(),
-    Second_Page(),
-    Third_page(),
+    const First_Page(),
+    const Second_Page(),
+    const Third_page(),
   ];
+
+  Page_View({super.key});
 
   @override
   Widget build(BuildContext context) {

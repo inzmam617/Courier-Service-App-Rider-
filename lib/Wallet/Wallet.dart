@@ -11,8 +11,8 @@ class Wallet extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Color(0xff85DAE9),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff85DAE9),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
         ),
         leading: Padding(
@@ -27,7 +27,7 @@ class Wallet extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "Wallet",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
@@ -35,12 +35,12 @@ class Wallet extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(32),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       blurRadius: 3,
@@ -56,7 +56,7 @@ class Wallet extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           "Current Balance",
                           style: TextStyle(fontSize: 14, color: Colors.black),
@@ -72,21 +72,21 @@ class Wallet extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 180,
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return Withdraw();
+                      return const Withdraw();
                     }));
                   },
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff85DAE9),
+                      backgroundColor: const Color(0xff85DAE9),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32))),
-                  child: Text(
+                  child: const Text(
                     "Withdraw",
                     style: TextStyle(fontSize: 12, color: Colors.white),
                   )),

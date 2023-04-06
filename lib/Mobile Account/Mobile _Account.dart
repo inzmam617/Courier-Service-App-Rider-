@@ -10,8 +10,8 @@ class Mobile_Account extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
-        backgroundColor: Color(0xff85DAE9),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff85DAE9),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(45)),
         ),
         leading: Padding(
@@ -26,7 +26,7 @@ class Mobile_Account extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
+        title: const Text(
           "Mobile Account",
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
@@ -35,12 +35,12 @@ class Mobile_Account extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                           color: Colors.grey,
                           blurRadius: 3,
@@ -57,12 +57,12 @@ class Mobile_Account extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 1.5,
                       ),
                     ),
-                    SizedBox(width: 2),
+                    const SizedBox(width: 2),
                     Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.grey,
                               blurRadius: 3,
@@ -74,17 +74,17 @@ class Mobile_Account extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Add Amount",
                             style:
                                 TextStyle(fontSize: 12, color: Color(0xffCAC2C2)),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Container(
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(32),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 3,
@@ -100,9 +100,9 @@ class Mobile_Account extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Container(
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                decoration: const BoxDecoration(color: Colors.white, boxShadow: [
                   BoxShadow(
                       color: Color(0xffA1E2EE),
                       blurRadius: 3,
@@ -112,24 +112,24 @@ class Mobile_Account extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        SizedBox(width: 25),
+                        const SizedBox(width: 25),
                         SvgPicture.asset("assets/mobile-phone-icon.svg"),
-                        SizedBox(width: 10),
-                        Text(
+                        const SizedBox(width: 10),
+                        const Text(
                           "With Mobile",
                           style:
                               TextStyle(fontSize: 15, color: Color(0xff585D5E)),
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
-                    Align(
+                    const SizedBox(height: 30),
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(left: 25),
                           child: Text(
                             "App Name",
                             style:
@@ -139,7 +139,7 @@ class Mobile_Account extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: "Oguz Bulbul",
                               hintStyle: TextStyle(
                                   fontSize: 12, color: Color(0xff171717)),
@@ -147,11 +147,11 @@ class Mobile_Account extends StatelessWidget {
                                   borderSide:
                                       BorderSide(color: Color(0xff8F92A1))))),
                     ),
-                    SizedBox(height: 20),
-                    Align(
+                    const SizedBox(height: 20),
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(left: 25),
                           child: Text(
                             "Account Name",
                             style:
@@ -161,7 +161,7 @@ class Mobile_Account extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: "888532112155",
                               hintStyle: TextStyle(
                                   fontSize: 12, color: Color(0xff171717)),
@@ -169,11 +169,11 @@ class Mobile_Account extends StatelessWidget {
                                   borderSide:
                                       BorderSide(color: Color(0xff8F92A1))))),
                     ),
-                    SizedBox(height: 20),
-                    Align(
+                    const SizedBox(height: 20),
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(left: 25),
                           child: Text(
                             "Account Number",
                             style:
@@ -183,7 +183,7 @@ class Mobile_Account extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: "888532112155",
                               hintStyle: TextStyle(
                                   fontSize: 12, color: Color(0xff171717)),
@@ -194,17 +194,17 @@ class Mobile_Account extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               SizedBox(
                 height: 35,
                 width: 150,
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        primary: Color(0xff85DAE9),
+                        backgroundColor: const Color(0xff85DAE9),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32))),
-                    child: Text(
+                    child: const Text(
                       "Done",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     )),

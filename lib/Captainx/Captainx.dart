@@ -20,7 +20,7 @@ class Captainx extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(100),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.grey,
                           blurRadius: 3,
@@ -35,19 +35,19 @@ class Captainx extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "CAPTAINX",
                 style: TextStyle(fontSize: 10, color: Colors.black),
               ),
               Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xffFD9F00), width: 1.0),
-                    image: DecorationImage(
+                    border: Border.all(color: const Color(0xffFD9F00), width: 1.0),
+                    image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage("assets/pic.png.jpg")),
-                    color: Color(0xffFD9F00),
+                    color: const Color(0xffFD9F00),
                     borderRadius: BorderRadius.circular(32),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
                         blurRadius: 1,
@@ -72,9 +72,9 @@ class Captainx extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.black45,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(40),
@@ -84,9 +84,9 @@ class Captainx extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
+                    const SizedBox(height: 20),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 15),
                       child: Text(
                         "Delivery Time",
                         style: TextStyle(fontSize: 10, color: Colors.white),
@@ -97,16 +97,16 @@ class Captainx extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "1 h- 35 min",
                             style: TextStyle(
                                 fontSize: 20, color: Color(0xffFD9F00)),
                           ),
                           Container(
                             decoration: BoxDecoration(
-                                color: Color(0xffFD9F00),
+                                color: const Color(0xffFD9F00),
                                 borderRadius: BorderRadius.circular(100),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                       color: Colors.grey,
                                       blurRadius: 3,
@@ -122,21 +122,21 @@ class Captainx extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Arslan Ahmad\nAli Ahmad Shah Colony street 9 House #14",
                             style: TextStyle(fontSize: 14, color: Colors.white),
                           ),
                           Container(
                             decoration: BoxDecoration(
-                                color: Color(0xffFD9F00),
+                                color: const Color(0xffFD9F00),
                                 borderRadius: BorderRadius.circular(100),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                       color: Colors.grey,
                                       blurRadius: 3,
