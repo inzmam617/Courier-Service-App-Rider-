@@ -3,7 +3,7 @@ class UserInfo {
   final String email;
   final String phone;
   final String city;
-  final DateTime dateOfBirth;
+  final String dateOfBirth;
 
   UserInfo({
     required this.name,
@@ -19,7 +19,7 @@ class UserInfo {
       email: json['message']['email'],
       phone: json['message']['phone'],
       city: json['message']['city'],
-      dateOfBirth: DateTime.parse(json['message']['dateOfBirth']),
+      dateOfBirth: (json['message']['dateOfBirth']),
     );
   }
 }

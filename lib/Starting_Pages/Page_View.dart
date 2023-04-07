@@ -21,7 +21,8 @@ class Page_View extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-          children:[ PageView(
+          children:[
+            PageView(
             controller: pageController,
             children: pages,
           ),

@@ -6,13 +6,16 @@ import 'package:flutter_svg/svg.dart';
 import '../Model/TransactionModel.dart';
 
 class Transactions extends StatefulWidget {
-  const Transactions({Key? key}) : super(key: key);
+  String name;
+  Transactions({Key? key , required this.name}) : super(key: key);
 
   @override
-  State<Transactions> createState() => _TransactionsState();
+  State<Transactions> createState() => _TransactionsState(name: name);
 }
 
 class _TransactionsState extends State<Transactions> {
+  String name;
+  _TransactionsState({required this.name});
 
   void initState(){
     super.initState();
@@ -189,7 +192,7 @@ class _TransactionsState extends State<Transactions> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children:  [
                                         Text(
-                                          "Inzmam Malik",
+                                          name,
                                           style: TextStyle(
                                               fontSize: 14, color: Colors.black),
                                         ),

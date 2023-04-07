@@ -4,6 +4,8 @@ import 'package:delivery_customer_side/Home%20Screen/Pending_Orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../API/All_APi.dart';
+
 
 class Home_Screen extends StatefulWidget {
   const Home_Screen({Key? key}) : super(key: key);
@@ -15,6 +17,37 @@ class Home_Screen extends StatefulWidget {
 class _Home_ScreenState extends State<Home_Screen> {
   bool isSwitched = false;
   bool isSwitched1 = false;
+  String? name;
+  void initState(){
+    super.initState();
+    ApiServiceForUserInfo.GetUserInfo().then((value){
+      setState(() {
+        name = value.name;
+
+        // value.name = name ;
+      });
+      // if(value.name == null){
+      print(value.name);
+      // }
+      // else{
+      //   showDialog(
+      //     context: context,
+      //     builder: (BuildContext context) => CupertinoAlertDialog(
+      //       title: const Text("Error"),
+      //       content: Text(value.name),
+      //       actions: <Widget>[
+      //         CupertinoDialogAction(
+      //           onPressed: () {
+      //             Navigator.pop(context);
+      //           },
+      //           child: const Text("Ok"),
+      //         ),
+      //       ],
+      //     ),
+      //   );
+      // }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +84,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        children: const [
+                        children: [
                           CircleAvatar(
                             backgroundImage: AssetImage("assets/pic.png.jpg"),
                             radius: 35,
                           ),
                           Text(
-                            "Ahmad Ali",
+                            name  ?? "",
                             style: TextStyle(fontSize: 24, color: Colors.black),
                           ),
                           Text(
@@ -287,10 +320,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 },
                                 child: SvgPicture.asset("assets/icon.svg"),
                               ),
-                              const Padding(
+                              Padding(
                                 padding: EdgeInsets.only(left: 20),
                                 child: Text(
-                                  "Arslan Ahmed",
+                                  name ?? "",
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Color(0xff585756),

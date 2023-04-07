@@ -1,6 +1,10 @@
 import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_In.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Bottom bar/Bottom_bar.dart';
+import '../Home Screen/Home_Screen.dart';
 
 class First_Page extends StatelessWidget {
   const First_Page({Key? key}) : super(key: key);
@@ -32,11 +36,21 @@ class First_Page extends StatelessWidget {
           SizedBox(
             width: 200,
             child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return Sign_In();
-                  }));
+                onPressed: () async {
+                  // final prefs = await SharedPreferences.getInstance();
+                  // print(prefs.getString("id"));
+                  //
+                  // if(prefs.getString("id").toString().length == 0){
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (BuildContext context) {
+                      return Sign_In();
+                    }));
+                  // }
+                  // else if(prefs.getString("id") != null)
+                  //   Navigator.of(context)
+                  //       .push(MaterialPageRoute(builder: (BuildContext context) {
+                  //     return Bottom_bar(id: prefs.getString("id").toString() ?? "",);
+                  //   }));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff85DAE9),

@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Model/DeleteriderModel.dart';
 import '../Model/TransactionModel.dart';
+import '../Model/UserInfoModel.dart';
 import '../Model/forgotpassModel.dart';
 import '../Model/logoutModel.dart';
 import '../Model/personavehicleModel.dart';
@@ -216,6 +217,39 @@ class ApiServiceForTransaction {
       } catch (e) {}
     }
     return TransactionModel(  );
+  }
+}
+class ApiServiceForUserInfo {
+  static Future<UserInfo> GetUserInfo() async {
+    final prefs = await SharedPreferences.getInstance();
+    String id=prefs.getString('riderId').toString();
+    String token=prefs.getString('token').toString();
+    String URL = "${baseUrl}riders/$id";
+    // print('id');
+    // print(id);
+    // print("token");
+
+    // print(token);
+    // print("url");
+    // print(URL);
+    final response = await http.get(Uri.parse(URL),headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $token',
+    });
+    final String res = response.body;
+    if (res != 'null') {
+      try {
+        // print(res);
+        // await prefs.remove('riderId');
+        // await prefs.remove('token');
+        final jsonData = json.decode(res) as Map<String, dynamic>;
+        return UserInfo.fromJson(jsonData);
+      } catch (e) {
+        print(e.toString());
+      }
+    }
+    return UserInfo(name: '', email: '', city: '', phone: '', dateOfBirth: ""  );
   }
 }
 // class ApiServiceForPasswordVehicle {

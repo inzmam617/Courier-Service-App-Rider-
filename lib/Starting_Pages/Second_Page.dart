@@ -1,6 +1,9 @@
 import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_In.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Bottom bar/Bottom_bar.dart';
 
 
 class Second_Page extends StatelessWidget {
@@ -33,7 +36,7 @@ class Second_Page extends StatelessWidget {
           SizedBox(
             width: 200,
             child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext context) {
                     return Sign_In();
