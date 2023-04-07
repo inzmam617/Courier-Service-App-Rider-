@@ -252,7 +252,7 @@ class _Sign_UpState extends State<Sign_Up> {
                         context: context,
                         builder: (BuildContext context) => CupertinoAlertDialog(
                           title: const Text("Error"),
-                          content: Text(value.message),
+                          content: Text(value.message.toString()),
                           actions: <Widget>[
                             CupertinoDialogAction(
                               onPressed: () {

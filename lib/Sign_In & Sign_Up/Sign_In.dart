@@ -88,21 +88,21 @@ class Sign_In extends StatelessWidget {
                               return Bottom_bar(id: value.riderId.toString(),);
                             }));
                       } else {
-                        // showDialog(
-                        //   context: context,
-                        //   builder: (BuildContext context) => CupertinoAlertDialog(
-                        //     title: const Text("Error"),
-                        //     content: Text(value.message.toString()),
-                        //     actions: <Widget>[
-                        //       CupertinoDialogAction(
-                        //         onPressed: () {
-                        //           Navigator.pop(context);
-                        //         },
-                        //         child: Text("Ok"),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // );
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => CupertinoAlertDialog(
+                            title: const Text("Error"),
+                            content: Text(value.message.toString()),
+                            actions: <Widget>[
+                              CupertinoDialogAction(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("Ok"),
+                              ),
+                            ],
+                          ),
+                        );
                         // Error
                         print("Error: ${value.riderId}");
                         showDialog(

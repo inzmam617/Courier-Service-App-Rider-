@@ -1,3 +1,4 @@
+import 'package:delivery_customer_side/Sign%20Up/Bank_Information.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -755,8 +756,6 @@ class Vehicle_Verification extends StatelessWidget {
               height: 33,
               child: ElevatedButton(
                 onPressed: () {
-                  String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDJjODQ3YzIwNGVlZTE0NmJlNThmOTkiLCJpYXQiOjE2ODA3MTE4ODN9.2-0K5ghlQDKVW-ypCiWtnY9qdfIAADWitJyPSn9C24E";
-
                   Map<String, dynamic> body = {
                     "emiratesIdFront": FrontImage,
                     "emiratesIdBack": backImage,
@@ -768,14 +767,14 @@ class Vehicle_Verification extends StatelessWidget {
                     "licensePlateNumber": "New York",
                     "userId": id,
                   };
-                  ApiServiceForSignup.vehicleInfo(body ,token).then((value) {
-                    // if (value. != null) {
-                    //   // Navigator.of(context)
-                    //   //     .push(MaterialPageRoute(builder: (BuildContext context) {
-                    //   //   return Personal_Information();
-                    //   // }));
-                    // }
-                    // if {
+                  ApiServiceForSignup.vehicleInfo(body ).then((value) {
+                    if (value.message =='Success') {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (BuildContext context) {
+                        return Bank_Information();
+                      }));
+                    }
+                    else{
                       showDialog(
                         context: context,
                         builder: (BuildContext context) => CupertinoAlertDialog(
@@ -791,8 +790,7 @@ class Vehicle_Verification extends StatelessWidget {
                           ],
                         ),
                       );
-
-                    // }
+                    }
                   });
                   // Navigator.of(context)
                   //     .push(MaterialPageRoute(builder: (BuildContext context) {

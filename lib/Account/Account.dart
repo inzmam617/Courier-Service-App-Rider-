@@ -20,8 +20,8 @@ class Account extends StatelessWidget {
         toolbarHeight: 80,
         leading: InkWell(
           onTap: () {
-            print(id);
-            // Navigator.of(context).pop();
+            // print(id);
+            Navigator.of(context).pop();
           },
           child: SvgPicture.asset(
             "assets/Map Icon.svg",
@@ -129,13 +129,70 @@ class Account extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
+              InkWell(
+                onTap: () {
+
+                  ApiServiceForSignup.deleteId().then((value) {
+                    if (value.message == "Rider information deleted successfully") {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return Sign_In();
+                          }));
+                    }
+                    else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) =>
+                            CupertinoAlertDialog(
+                              title: const Text("Error"),
+                              content: value.error == null ? Text(value.message.toString()) : Text(value.error.toString()),
+                              actions: <Widget>[
+                                CupertinoDialogAction(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Ok"),
+                                ),
+                              ],
+                            ),
+                      );
+                    }
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 3,
+                          offset: Offset(1.0, 2.0),
+                        )
+                      ]),
+                  height: 40,
+                  width: MediaQuery.of(context).size.width / 1.8,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset("assets/swap.svg"),
+                      const SizedBox(width: 5),
+                      const Text(
+                        "Delete",
+                        style: TextStyle(fontSize: 10, color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
               SvgPicture.asset("assets/login.svg"),
               const SizedBox(height: 5),
               InkWell(
                   onTap: () {
-
-                    ApiServiceForSignIn.logOut(id).then((value) {
+                    String token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDJlZmY3ZDEzMTU5MGI0Mjg4YzZmNWEiLCJpYXQiOjE2ODA4NTkxNzV9.yA4ewPFaXdxcy-R7KAEjflXAhHbu_U3gZ0bycZnzOGI';
+                    ApiServiceForSignIn.logOut().then((value) {
                       if (value.message == "Rider logged out successfully") {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: (BuildContext context) {

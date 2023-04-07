@@ -1,9 +1,52 @@
+import 'package:delivery_customer_side/API/All_APi.dart';
 import 'package:delivery_customer_side/Withdraw/Withdraw.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Wallet extends StatelessWidget {
+import '../Model/RiderWalletModel.dart';
+
+class Wallet extends StatefulWidget {
   const Wallet({Key? key}) : super(key: key);
+
+  @override
+  State<Wallet> createState() => _WalletState();
+}
+
+class _WalletState extends State<Wallet> {
+
+  int? Wbalance;
+  void initState(){
+    super.initState();
+    ApiServiceForWallet.wallet().then((value) {
+      if (value.balance != null) {
+        print(value.balance);
+        setState(() {
+          Wbalance = value.balance;
+        });
+      }
+      // else {
+      //   showDialog(
+      //     context: context,
+      //     builder: (BuildContext context) =>
+      //         CupertinoAlertDialog(
+      //           title: const Text("Error"),
+      //           content: Text("An Error Occurred") ,
+      //           actions: <Widget>[
+      //             CupertinoDialogAction(
+      //               onPressed: () {
+      //                 Navigator.pop(context);
+      //               },
+      //               child: const Text("Ok"),
+      //             ),
+      //           ],
+      //         ),
+      //   );
+      // }
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,14 +99,20 @@ class Wallet extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
                           "Current Balance",
                           style: TextStyle(fontSize: 14, color: Colors.black),
                         ),
+                        Wbalance != null ?
                         Text(
-                          "256\$",
+                          Wbalance.toString() ?? "",
                           style: TextStyle(fontSize: 22, color: Colors.black),
+                        ) : SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(),
+
                         ),
                       ],
                     ),
@@ -76,11 +125,17 @@ class Wallet extends StatelessWidget {
             SizedBox(
               width: 180,
               child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return const Withdraw();
-                    }));
+                  onPressed: () async {
+                    final prefs = await SharedPreferences.getInstance();
+                    print(prefs.getString("riderId"));
+                    print(prefs.getString("token"));
+                    print(Wbalance);
+
+                    // print(object)
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (BuildContext context) {
+                    //   return const Withdraw();
+                    // }));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xff85DAE9),
@@ -90,7 +145,20 @@ class Wallet extends StatelessWidget {
                     "Withdraw",
                     style: TextStyle(fontSize: 12, color: Colors.white),
                   )),
-            )
+            ),
+            // StreamBuilder<RiderWalletModel>(
+            //   stream: walletStream, // Your stream that emits a new value whenever the wallet balance changes
+            //   builder: (context, snapshot) {
+            //     if (snapshot.hasData && snapshot.data!.balance != null) {
+            //       return Text('Wallet balance: ${snapshot.data!.balance}');
+            //     } else if (snapshot.hasError) {
+            //       return Text('An error occurred while fetching wallet balance');
+            //     } else {
+            //       return Text('Loading wallet balance...');
+            //     }
+            //   },
+            // ),
+
           ],
         ),
       ),

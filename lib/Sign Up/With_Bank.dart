@@ -1,5 +1,10 @@
+import 'package:delivery_customer_side/Home%20Screen/Home_Screen.dart';
+import 'package:delivery_customer_side/Sign_In%20&%20Sign_Up/Sign_In.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../API/All_APi.dart';
 
 class With_Bank extends StatelessWidget {
   const With_Bank({Key? key}) : super(key: key);
@@ -298,14 +303,47 @@ class With_Bank extends StatelessWidget {
               width: 170,
               height: 33,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async{
+                  Map<String, dynamic> body = {
+                    "userId": "641ede8558b4114d1d8c603a",
+                    "accountType": "bank",
+                    "cardHolder": "John Doe",
+                    "cardNumber": "1234567890123456",
+                    "expiryDate": "12/24",
+                    "ccv": "123"
+                  };
+                  ApiServiceForSignup.bank(body).then((value) {
+                    if (value.message =='Success') {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (BuildContext context) {
+                        return Sign_In();
+                      }));
+                    }
+                    else{
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => CupertinoAlertDialog(
+                          title: const Text("Error"),
+                          content: value.error == null ?  Text(value.message.toString()) :Text(value.error.toString()) ,
+                          actions: <Widget>[
+                            CupertinoDialogAction(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Ok"),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  });
+
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff85DAE9),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32))),
-                child: const Text(
-                  "Next",
-                  style: TextStyle(fontSize: 11, color: Colors.white),
+                child: const Text("Next",style: TextStyle(fontSize: 11, color: Colors.white),
                 ),
               ),
             ),

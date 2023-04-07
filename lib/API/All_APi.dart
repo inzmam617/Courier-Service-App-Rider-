@@ -1,5 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:delivery_customer_side/Model/RiderWalletModel.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Model/DeleteriderModel.dart';
+import '../Model/TransactionModel.dart';
 import '../Model/forgotpassModel.dart';
 import '../Model/logoutModel.dart';
 import '../Model/personavehicleModel.dart';
@@ -13,6 +18,7 @@ class ApiServiceForSignup {
     const String URL = "${baseUrl}signup/personal";
     final response = await http.post(Uri.parse(URL),headers: {"Content-Type": "application/json"}, body: json.encode(body));
     final String res = response.body;
+    print(res);
     if (res != 'null') {
       try {
         final jsonData = json.decode(res) as Map<String, dynamic>;
@@ -22,15 +28,49 @@ class ApiServiceForSignup {
     return SignupResponse(message: 'An error occurred', id: null, status: null);
   }
 
-  static Future<PersonalVehicleModel> vehicleInfo(Map<String, dynamic> body, String token) async {
+  static Future<BankInfoModel> bank(Map<String, dynamic> body) async {
+    const String URL = "${baseUrl}signup/bank";
+    final response = await http.post(Uri.parse(URL),headers: {"Content-Type": "application/json"}, body: json.encode(body));
+    final String res = response.body;
+    if (res != 'null') {
+      try {
+        final jsonData = json.decode(res) as Map<String, dynamic>;
+        return BankInfoModel.fromJson(jsonData);
+      } catch (e) {}
+    }
+    return BankInfoModel(message: 'An error occurred');
+  }
+  static Future<DeleteRiderID> deleteId() async {
+    final prefs = await SharedPreferences.getInstance();
+    String id=prefs.getString('riderId').toString();
+    String token=prefs.getString('token').toString();
+    String URL = "${baseUrl}deleteProfile/${id}";
+    final response = await http.delete(Uri.parse(URL),headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $token',
+    });
+    final String res = response.body;
+    if (res != 'null') {
+      try {
+        print(res);
+        await prefs.remove('riderId');
+        await prefs.remove('token');
+        final jsonData = json.decode(res) as Map<String, dynamic>;
+        return DeleteRiderID.fromJson(jsonData);
+      } catch (e) {}
+    }
+    return DeleteRiderID(message: 'An error occurred');
+  }
+
+  static Future<PersonalVehicleModel> vehicleInfo(Map<String, dynamic> body) async {
     const String URL = "${baseUrl}signup/vehicle";
     var imageUploadRequest = http.MultipartRequest('POST', Uri.parse(URL)) ;
-    imageUploadRequest.headers["Authorization"] = token;
     imageUploadRequest.fields.addAll({
-      'drivingExperience': '${body['drivingExperience']}',
+      'drivingExperience': '${int.tryParse(body['drivingExperience'] ?? '') ?? 0}',
       'carMake': '${body['carMake']}',
       'model': '${body['model']}',
-      'year': '${body['year']}',
+      'year': '${int.tryParse(body['year'] ?? '') ?? 0}',
       'color': '${body['color']}',
       'licensePlateNumber': '${body['licensePlateNumber']}',
       'userId': '${body['userId']}',
@@ -61,24 +101,37 @@ class ApiServiceForSignIn {
     if (res != 'null') {
       try {
         final jsonData = json.decode(res) as Map<String, dynamic>;
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('riderId', jsonData['riderId'].toString());
+        await prefs.setString('token', jsonData['token'].toString());
         return SignInResponse.fromJson(jsonData);
       } catch (e) {}
     }
       return SignInResponse( riderId: null, token: null);
 
   }
-    static Future<LogOutModel> logOut(String id) async {
-    String URL = "${baseUrl}riderLogout$id";
-    final response = await http.post(Uri.parse(URL));
+    static Future<LogOutModel> logOut() async {
+      final prefs = await SharedPreferences.getInstance();
+      String id=prefs.getString('riderId').toString();
+      String token=prefs.getString('token').toString();
+    String URL = "${baseUrl}riderLogout/$id";
+    final response = await http.post(Uri.parse(URL),headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': 'Bearer $token',
+    });
     final String res = response.body;
     if (res != 'null') {
       try {
+        await prefs.remove('riderId');
+        await prefs.remove('token');
         final jsonData = json.decode(res) as Map<String, dynamic>;
         return LogOutModel.fromJson(jsonData);
       } catch (e) {}
     }
     return LogOutModel( message: null, error: null);
   }
+ 
 }
 
 class ApiServiceForForgotPassword {
@@ -116,6 +169,55 @@ class ApiServiceForForgotPassword {
   }
 }
 
+class ApiServiceForWallet {
+  static Future<RiderWalletModel> wallet() async {
+    final prefs = await SharedPreferences.getInstance();
+    String id=prefs.getString('riderId').toString();
+    String token=prefs.getString('token').toString();
+    String URL = "${baseUrl}wallet/$id";
+    final response = await http.get(Uri.parse(URL),headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $token',
+    });
+    final String res = response.body;
+    if (res != 'null') {
+      try {
+        print(res);
+        // await prefs.remove('riderId');
+        // await prefs.remove('token');
+        final jsonData = json.decode(res) as Map<String, dynamic>;
+        return RiderWalletModel.fromJson(jsonData);
+      } catch (e) {}
+    }
+    return RiderWalletModel( balance: null, );
+  }
+}
+
+class ApiServiceForTransaction {
+  static Future<TransactionModel> transactionHistory() async {
+    final prefs = await SharedPreferences.getInstance();
+    String id=prefs.getString('riderId').toString();
+    String token=prefs.getString('token').toString();
+    String URL = "${baseUrl}getransactions/$id";
+    final response = await http.get(Uri.parse(URL),headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $token',
+    });
+    final String res = response.body;
+    if (res != 'null') {
+      try {
+        print(res);
+        // await prefs.remove('riderId');
+        // await prefs.remove('token');
+        final jsonData = json.decode(res) as Map<String, dynamic>;
+        return TransactionModel.fromJson(jsonData);
+      } catch (e) {}
+    }
+    return TransactionModel(  );
+  }
+}
 // class ApiServiceForPasswordVehicle {
 //   static Future<PersonalVehicleModel> sendCodeToEmail(Map<String, dynamic> body) async {
 //     const String URL = baseUrl + "signup/vehicle";
